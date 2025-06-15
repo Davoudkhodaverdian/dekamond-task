@@ -12,8 +12,8 @@ export default function DashboardPage() {
     if (!user) {
       router.replace('/auth');
     }
-  }, []);
-
+  }, [user]);
+  if (!user) return (<></>);
   return (
     <Dashboard />
   );
