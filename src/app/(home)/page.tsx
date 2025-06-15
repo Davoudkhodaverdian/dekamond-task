@@ -1,12 +1,12 @@
 "use client";
+import { AuthContext } from '@/components/authProvider';
 import { useRouter } from 'next/navigation';
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 
 export default function HomePage() {
-
+  const { user } = useContext(AuthContext);
   const router = useRouter();
   useEffect(() => {
-    const user = localStorage.getItem('user');
     console.log({ user });
     if (user) {
       router.replace('/dashboard');
@@ -14,6 +14,7 @@ export default function HomePage() {
       router.replace('/auth');
     }
   }, []);
+
   return (
     <main>صفحه اصلی</main>
   );

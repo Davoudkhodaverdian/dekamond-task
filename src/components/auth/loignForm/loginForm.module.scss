@@ -1,0 +1,27 @@
+.login_form {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 80px;
+    max-width: 500px;
+    width: 100%;
+    h1 {
+        text-align: center;
+        // font-700
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 170%;
+    }
+
+    form {
+        margin-top: 40px;
+        .error {
+            display: block;
+            width: 100%;
+            color: #B91C1C;
+            // font-400
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 170%;
+        }
+    }
+}
