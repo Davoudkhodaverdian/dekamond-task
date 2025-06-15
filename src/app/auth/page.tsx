@@ -8,7 +8,7 @@ export default function AuthPage() {
   const { user } = useContext(AuthContext);
   const router = useRouter();
   useEffect(() => {
-    console.log({ user });
+   
     if (user) {
       router.replace('/dashboard');
     }

@@ -1,9 +1,12 @@
 "use client";
+import { User } from '@/fundamental/models/user';
 import { createContext, useEffect, useState, ReactNode } from 'react';
 
+
+
 interface AuthContextType {
-    user: string | null;
-    login: (userData: string) => void;
+    user: User | null;
+    login: (userData: User) => void;
     logout: () => void;
 }
 
@@ -18,7 +21,7 @@ interface Props {
 }
 
 export const AuthProvider = ({ children }: Props) => {
-    const [user, setUser] = useState<string | null>(null);
+    const [user, setUser] = useState<User | null>(null);
   
     useEffect(() => {
         const storedUser = localStorage.getItem('user');
@@ -39,7 +42,7 @@ export const AuthProvider = ({ children }: Props) => {
         }
     }, [user]);
 
-    const login = (userData: string) => setUser(userData);
+    const login = (userData: User) => setUser(userData);
     const logout = () => setUser(null);
 
     return (

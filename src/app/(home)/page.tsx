@@ -7,14 +7,14 @@ export default function HomePage() {
   const { user } = useContext(AuthContext);
   const router = useRouter();
   useEffect(() => {
-    console.log({ user });
+  
     if (user) {
       router.replace('/dashboard');
     } else {
       router.replace('/auth');
     }
   }, []);
-
+  
   return (
     <main>صفحه اصلی</main>
   );

@@ -9,7 +9,6 @@ export default function DashboardPage() {
   const { user } = useContext(AuthContext);
   const router = useRouter();
   useEffect(() => {
-    console.log({ user });
     if (!user) {
       router.replace('/auth');
     }
